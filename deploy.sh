@@ -1,6 +1,9 @@
-docker build -t georgyjohn/multi-client:latest -t georgyjohn/multi-client:$SHA -f ./client/Dockerfile ./client
-docker build -t georgyjohn/multi-server:latest -t georgyjohn/multi-server:$SHA -f ./server/Dockerfile ./server
-docker build -t georgyjohn/multi-worker:latest -t georgyjohn/multi-worker:$SHA -f ./worker/Dockerfile ./worker
+docker build -t georgyjohn/multi-client:latest -f ./client/Dockerfile ./client
+docker build -t georgyjohn/multi-client:$SHA -f ./client/Dockerfile ./client
+docker build -t georgyjohn/multi-server:latest -f ./server/Dockerfile ./server
+docker build -t georgyjohn/multi-server:$SHA -f ./server/Dockerfile ./server
+docker build -t georgyjohn/multi-worker:latest -f ./worker/Dockerfile ./worker
+docker build -t georgyjohn/multi-worker:$SHA -f ./worker/Dockerfile ./worker
 docker push georgyjohn/multi-client:latest
 docker push georgyjohn/multi-server:latest
 docker push georgyjohn/multi-worker:latest
